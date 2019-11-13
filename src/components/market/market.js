@@ -6,9 +6,6 @@ import styles from './marketComponents.module.scss';
 
 
 let Products = ({ products, pickUpProduct, history }) => {
-    console.log('products');
-    console.log(products);
-
     const goToCart = () => {
         history.push('/cart');
     }

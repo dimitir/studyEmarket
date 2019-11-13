@@ -8,6 +8,9 @@ const mapStateProps = (state) => (
     }
 )
 
+
+
+
 const mapDispatchToProps = (dispatch) => (
     {
         pickUpProduct: id => dispatch(pickUpProduct(id)),

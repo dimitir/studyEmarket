@@ -21,7 +21,7 @@ const Cart = ({ products, removeProduct, history }) => {
 
     return (
         <React.Fragment>
-            <h3>Cart</h3>
+            <div className={'pageTitle'}><h3>Cart</h3></div>
             <button onClick={() => goToMarcet()}>market</button>
             {showProducts}
         </React.Fragment>
