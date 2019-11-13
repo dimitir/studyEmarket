@@ -1,38 +1,41 @@
 import { PICK_UP_PRODUCT_ON_PAGE_PRODUCTS } from './actions';
+import defaultState from '../defaultProducts';
 
-const defaultState = [
-    {
-        name: 'Sony',
-        imgName: 'sony.jpg',
-        id: 100,
-        price: '1000',
-        curent: '',
-        cart: false
-    },
-    {
-        name: 'Apple',
-        imgName: 'apple.jpg',
-        id: 101,
-        price: '2000',
-        curent: '',
-        cart: false
-    },
-    {
-        name: 'Yota',
-        imgName: 'yota.jpg',
-        id: 102,
-        curent: '',
-        price: '3000',
-        cart: false
+import { REMOVE_FROM_CART } from './actions';
+
+
+const cartReducers = (state = defaultState, action) => {
+    /*   console.log('action.id');
+      console.log(action.i); */
+    switch (action.type) {
+
+
+        default: return state
     }
-]
 
-export const marketReducers = (state = defaultState, action) => {
+}
+
+
+export default (state = defaultState, action) => {
     switch (action.type) {
         case PICK_UP_PRODUCT_ON_PAGE_PRODUCTS:
-            let newStateProduct = state[action.id];
-            newStateProduct.id = true;
-            return [...state, newStateProduct];
+            let newState = state.map(item => {
+                if (item.id === action.id) {
+                    item.onCart = true;
+                }
+                return item;
+            });
+            return newState;
+
+        case REMOVE_FROM_CART:
+            newState = state.map(item => {
+                if (item.id === action.id) {
+                    item.onCart = false;
+                }
+                return item;
+            })
+            return newState
+
         default: return state
     }
 }

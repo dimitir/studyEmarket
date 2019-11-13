@@ -54,7 +54,7 @@ const formikApp = withFormik({
         }, 2000);
         props.setEmail(values.email);
         props.setPassword(values.password);
-         props.history.push('/market');
+        props.history.push('/market');
     }
 
 })(SingUp);

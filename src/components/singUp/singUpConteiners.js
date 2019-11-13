@@ -1,7 +1,7 @@
 import singUp from './signUp';
 // import React from 'react';
 import { connect } from 'react-redux';
-import { setEmail, setPassword } from '../store/singUp/actions';
+import { setEmail, setPassword } from '../../store/singUp/actions';
 
 
 const mapStateProps = (state) => (

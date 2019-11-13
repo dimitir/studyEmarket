@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CssUrlRelativePlugin = require('css-url-relative-plugin');
 
 
 module.exports = (env, argv) => {
@@ -19,7 +20,7 @@ module.exports = (env, argv) => {
         entry: './src/main.js',
         output: {
             path: path.resolve(__dirname, './dist/'),
-            filename: 'main.js',
+            filename: '[name].js',
             publicPath: '/',
         },
         devtool: devtool,
@@ -106,6 +107,16 @@ module.exports = (env, argv) => {
                         }
                     ]
                 },
+                {
+                    test: /\.(png|jp(e*)g|svg)$/,
+                    use: [{
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8000, // Convert images < 8kb to base64 strings
+                            name: 'imagesCss/[hash]-[name].[ext]'
+                        }
+                    }]
+                }
 
             ]
         },
@@ -128,6 +139,7 @@ module.exports = (env, argv) => {
             new CopyWebpackPlugin([
                 { from: `src/img`, to: `img` },
             ]),
+
         ],
 
     }

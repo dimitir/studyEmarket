@@ -1,0 +1,40 @@
+.productBlock {
+  margin: auto;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-arond;
+  margin-top: 100px;
+}
+
+.product {
+  margin: 0 50px 50px 0;
+  height: 350px;
+  max-width: 250px;
+
+  .product_img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .product_name {
+    font-family: 'Segoe UI', Tahoma,
+      Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+
+  }
+
+  .product_price {
+    color: rgb(124, 61, 124);
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+ 

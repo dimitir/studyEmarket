@@ -1,0 +1,17 @@
+.icons {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  .iconCartImg {
+    height: 40px;
+    // width: 100%;
+  }
+  .iconCartNum{
+    font-size:30px;
+    color:red ;
+  }
+
+  
+}
