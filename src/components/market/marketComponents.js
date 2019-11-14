@@ -1,13 +1,12 @@
 import { connect } from 'react-redux';
 import market from './market';
-import { pickUpProduct } from '../../store/market/actions';
+import { pickUpProduct } from '../../store/marketCart/actions';
 
 const mapStateProps = (state) => (
     {
-        products: state.market,
+        products: state.marketCart,
     }
 )
-
 
 
 
