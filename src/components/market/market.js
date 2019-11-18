@@ -1,6 +1,6 @@
 // add opportunity give count for product ? 
 import React from 'react';
-import Product from '../product';
+import Product from '../_product/product';
 import styles from './marketComponents.module.scss';
 
 

@@ -1,13 +1,13 @@
 import singUp from './signUp';
-// import React from 'react';
 import { connect } from 'react-redux';
-import { setEmail, setPassword } from '../../store/singUp/actions';
+import { setUserName, setEmail, setPassword } from '../../store/singUp/actions';
 
 
 const mapStateProps = (state) => (
     {
         email: state.singUp.email,
-        password: state.singUp.password
+        password: state.singUp.password,
+        name: state.singUp.name
     }
 )
 
@@ -19,6 +19,7 @@ const mapStateProps = (state) => (
 
 const mapDispatchToProps = (dispatch) => (
     {
+        setUserName: val => dispatch(setUserName(val)),
         setEmail: val => dispatch(setEmail(val)),
         setPassword: val => dispatch(setPassword(val)),
     }
@@ -28,5 +29,4 @@ const mapDispatchToProps = (dispatch) => (
 
 
 
-const singUpContainers = connect(mapStateProps, mapDispatchToProps)(singUp);
-export default singUpContainers;
+export default connect(mapStateProps, mapDispatchToProps)(singUp);

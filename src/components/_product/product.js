@@ -1,9 +1,8 @@
 import React from 'react';
-import styles from './market/marketComponents.module.scss';
-
+import styles from './product.module.scss';
+ 
 
 const product = ({ product, onClick, textButton }) => {
-    console.groupEnd();
     return (
         <div className={styles.product}>
             <img className={styles.product_img} src={`img/products/${product.imgName}`} alt="" />

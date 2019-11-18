@@ -1,5 +1,5 @@
 import React from 'react';
-// import singUpConteiners from './components/singUpConteiners';
+import singUpConteiners from './components/singUp/singUpConteiners';
 import MarketComponents from './components/market/marketComponents';
 import CartButtonInfoComponent from './components/cart/cartButtonInfoComponent'
 import cartComponents from './components/cart/cartComponents';
@@ -11,13 +11,12 @@ const App = () => (
         <React.Fragment>
             <CartButtonInfoComponent />
             <Switch>
-                {/*  <Route component={singUpConteiners} path="/" exact /> */}
-                <Route component={MarketComponents} path="/" exact />
+                <Route component={singUpConteiners} path="/" exact />
+                <Route component={MarketComponents} path="/market" exact />
                 <Route component={cartComponents} path="/cart" exact />
             </Switch>
         </React.Fragment>
     </Router>
-
 );
 
 export default App;

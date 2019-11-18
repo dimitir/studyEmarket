@@ -1,9 +1,7 @@
-import { SIGN_UP_SET_EMAIL, SIGN_UP_SET_PASSWORD } from './actions';
-import defaultState from '../defaultProducts'
- 
+import { SIGN_UP_SET_EMAIL, SIGN_UP_SET_PASSWORD, SIGN_UP_SET_USER_NAME } from './actions';
 
-const singUpReducer = (state = defaultState, action) => {
-    console.log(state);
+
+const singUpReducer = (state = {}, action) => {
     switch (action.type) {
         case SIGN_UP_SET_EMAIL:
             return {
@@ -15,6 +13,12 @@ const singUpReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 password: action.payload
+            };
+
+        case SIGN_UP_SET_USER_NAME:
+            return {
+                ...state,
+                name: action.payload
             };
 
         default: return state
